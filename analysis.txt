@@ -1,0 +1,24 @@
+
+
+    "remove_if" is a predicate function called to iterate through
+ a list and remove elements that are true to a predefined function it 
+ is called by. Each given element is tested by the function until 
+ the iterator reaches the tail. The time complexity is O(n) and the range 
+ is determined by the number of elements passed in. 
+
+
+
+template <typename T> 
+template <typename PREDICATE> 
+void cop4530::List<T>::remove_if(PREDICATE pred)
+{
+   iterator itr = begin();
+   while(itr != tail) 
+   {                       
+      if(pred(*itr))
+         {
+            erase(itr); 
+         }
+         itr++;      
+   }
+}
